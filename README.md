@@ -1,6 +1,6 @@
-# Basic Website Worker
+# STARHAVEN — Spaceship Renovation
 
-A minimal Cloudflare Worker that serves a handful of static HTML pages using Cloudflare Workers Static Assets. No framework or build step is required.
+A fictional premium interstellar spaceship renovation service, built as a static website and served by a Cloudflare Worker.
 
 ## Project structure
 
@@ -8,20 +8,24 @@ A minimal Cloudflare Worker that serves a handful of static HTML pages using Clo
 .
 ├── public/
 │   ├── index.html
+│   ├── styles.css
 │   ├── 404.html
-│   ├── about/
-│   │   └── index.html
-│   └── contact/
-│       └── index.html
-├── src/
-│   └── index.js
+│   ├── about/index.html
+│   ├── services/index.html
+│   └── contact/index.html
+├── src/index.js
 └── wrangler.toml
 ```
 
-## Requirements
+## Pages
 
-- Node.js and npm
-- A Cloudflare account
+| Path | Page |
+| --- | --- |
+| `/` | Starhaven homepage |
+| `/services/` | Spaceship renovation services |
+| `/about/` | Company story and values |
+| `/contact/` | Contact details and demo enquiry form |
+| Unknown paths | Custom 404 page |
 
 ## Run locally
 
@@ -39,29 +43,14 @@ npx wrangler dev
 
 ## Deploy
 
-Log in to Cloudflare:
-
 ```bash
 npx wrangler login
-```
-
-Deploy the Worker and its static assets:
-
-```bash
 npx wrangler deploy
 ```
 
-## Pages
+## Notes
 
-| Path | Page |
-| --- | --- |
-| `/` | Home |
-| `/about/` | About |
-| `/contact/` | Contact |
-| Unknown paths | Custom 404 page |
-
-## Add another page
-
-Create a folder under `public` and add an `index.html` file. For example, `public/services/index.html` is available at `/services/`.
-
-Static files such as CSS, JavaScript, images, and fonts can also be placed in `public` and referenced by the HTML pages.
+- The business, prices, contact details and customer metrics are fictional demonstration content.
+- The contact form uses a `mailto:` action. It does not store or transmit submissions to a backend.
+- Spacecraft visuals are remotely hosted illustrative images; check the relevant source and licence before using them in a real commercial deployment.
+- The site uses Google Fonts and remotely hosted images, so those assets require an internet connection.
